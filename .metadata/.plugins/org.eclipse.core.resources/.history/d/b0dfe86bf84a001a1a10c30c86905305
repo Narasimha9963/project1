@@ -1,0 +1,18 @@
+package com.capgemini.storemanagement.controller;
+
+import com.capgemini.storemanagement.service.ManufactureService;
+
+public class ManufactureController {
+	private ManufactureService manService;
+	
+	public Users loginManufacturService(@RequestBody Users manufactur) {
+		Users users = new Users();
+		try {
+			users = manService.loginManufact(manufactur.getUserId(), manufactur.getPassword());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return users;
+	}// End of ManufactureloginService
+
+}

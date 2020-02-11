@@ -1,0 +1,19 @@
+package com.capgemini.storemanagement.controller;
+
+import com.capgemini.storemanagement.dto.Users;
+import com.capgemini.storemanagement.service.DealerService;
+
+public class DealerController {
+	private DealerService dealerService;
+	
+	public Users loginDealerService( Users dealer) {
+		Users users = new Users();
+		try {
+			users = dealerService.loginDealer(dealer.getUserId(), dealer.getPassword());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return users;
+	}// End of dealer login
+
+}

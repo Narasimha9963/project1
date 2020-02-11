@@ -1,0 +1,8 @@
+package com.capgemini.storemanagement.controller;
+
+import com.capgemini.storemanagement.service.ManufactureService;
+
+public class ManufactureController {
+	private ManufactureService manService;
+
+}

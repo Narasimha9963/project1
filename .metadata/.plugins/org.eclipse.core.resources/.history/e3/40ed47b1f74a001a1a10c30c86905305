@@ -1,0 +1,34 @@
+package com.capgemini.storemanagement.controller;
+
+import java.util.List;
+
+import com.capgemini.storemanagement.dto.Products;
+import com.capgemini.storemanagement.dto.Users;
+import com.capgemini.storemanagement.service.DealerService;
+
+public class DealerController {
+	private DealerService dealerService;
+	
+	public Users loginDealerService( Users dealer) {
+		Users users = new Users();
+		try {
+			users = dealerService.loginDealer(dealer.getUserId(), dealer.getPassword());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return users;
+	}// End of dealer login
+	
+	public List<Products> showAllProducts() {
+		List<Products> allProduct = dealerService.showAllproducts();
+		if (allProduct != null) {
+			for (Products products : allProduct) {
+				System.out.println(products);
+			}
+			return allProduct;
+		} else {
+			return null;
+		}
+	}// End of showAllProducts
+
+}

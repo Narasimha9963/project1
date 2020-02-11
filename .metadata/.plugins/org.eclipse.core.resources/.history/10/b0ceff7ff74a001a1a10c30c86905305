@@ -1,0 +1,6 @@
+package com.capgemini.storemanagement.controller;
+
+public class DealerController {
+	private DealerService dealerService;
+
+}
